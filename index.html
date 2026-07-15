@@ -383,6 +383,18 @@ section{padding:80px 40px;max-width:1100px;margin:0 auto;}
   @keyframes p2co1{0%,34%{opacity:0;}40%{opacity:1;}92%{opacity:1;}98%,100%{opacity:0;}}
   @keyframes p2co2{0%,64%{opacity:0;}70%{opacity:1;}92%{opacity:1;}98%,100%{opacity:0;}}
   @media(prefers-reduced-motion:reduce){.proto2-dim,.proto2-modal,.proto2-co1,.proto2-cursor,.proto2-cursor::after,.proto2-timer{animation:none;}.proto2-co2{animation:none;opacity:1;}.proto2-timer{opacity:1;}.proto2-cursor{display:none;}}
+  .ptp{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:12px;margin:30px 0 22px;}
+  .ptp-step{border:1px solid hsl(var(--border));border-radius:14px;background:var(--surface);padding:16px 16px 14px;display:flex;flex-direction:column;gap:6px;}
+  .ptp-n{font-size:12px;font-weight:700;color:hsl(var(--accent));letter-spacing:.06em;}
+  .ptp-t{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-0.01em;line-height:1.2;}
+  .ptp-d{font-size:12.5px;color:var(--text2);line-height:1.5;}
+  .ptp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:6px;}
+  .ptp-tag{font-size:10.5px;font-weight:600;color:var(--text3);border:1px solid hsl(var(--border));border-radius:999px;padding:2px 9px;}
+  .ptp-arrow{display:flex;align-items:center;justify-content:center;color:hsl(var(--accent));font-size:18px;font-weight:700;}
+  .hypo{border:1px solid hsl(var(--accent) / .35);border-radius:14px;background:hsl(var(--accent) / .05);padding:18px 20px;margin:4px 0 6px;}
+  .hypo-label{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:hsl(var(--accent));margin:0 0 6px;}
+  .hypo-text{font-size:15px;color:var(--text);line-height:1.55;margin:0;}
+  @media(max-width:760px){.ptp{grid-template-columns:1fr;}.ptp-arrow{transform:rotate(90deg);padding:2px 0;}}
   .pv-phone{width:320px;background:#0e0e0e;border-radius:40px;padding:11px;box-shadow:0 0 0 2px #2b2b2b, 0 26px 64px rgba(0,0,0,.4);}
   .pv-viewport{position:relative;width:298px;height:636px;background:#fff;border-radius:30px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#111;line-height:1.3;}
   .pv-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:92px;height:22px;background:#0e0e0e;border-radius:14px;z-index:20;}
@@ -671,6 +683,7 @@ section{padding:80px 40px;max-width:1100px;margin:0 auto;}
       <li><a data-target="compliance" role="button" tabindex="0">Compliance</a></li>
       <li><a data-target="evolution" role="button" tabindex="0">Design evolution</a></li>
       <li><a data-target="prototype" role="button" tabindex="0">Prototype</a></li>
+      <li><a data-target="production" role="button" tabindex="0">Production</a></li>
       <li><a data-target="results" role="button" tabindex="0">Results</a></li>
       <li><a data-target="reflection" role="button" tabindex="0">Reflection</a></li>
     </ul>
@@ -871,9 +884,8 @@ section{padding:80px 40px;max-width:1100px;margin:0 auto;}
 <div class="divider"></div>
 <section id="compliance">
   <div class="section-label">Compliance validation</div>
-  <h2>Compliance was validated with Legal, state by state.</h2>
-  <p>I worked directly with Legal to validate that the pricing presentation, disclosures, labels, and microcopy met FTC requirements and each state's specific regulations. How the price appeared, down to the wording, was checked against the rules rather than assumed to pass.</p>
-  <p>I created mockups and prototypes aligned to each state's compliance rules and reviewed them with Legal to confirm the experience held up in every jurisdiction before it shipped. Design carried the compliance surface, so Legal could sign off on what buyers would actually see, not a description of it.</p>
+  <h2>Compliance was designed in, state by state.</h2>
+  <p>Because disclosure rules changed from state to state, I built the pricing mockups and prototypes to match each jurisdiction's requirements and walked Legal through them one state at a time, confirming the real experience held up before any of it was built. Design carried the compliance surface, so Legal could sign off on what buyers would actually see rather than a description of it.</p>
   <div class="insight"><div class="insight-icon">◆</div><div class="insight-text">Getting Legal into the mockups early turned compliance from a gate at the end into a shared design constraint from the start.</div></div>
 </section>
 <div class="divider"></div>
@@ -933,6 +945,40 @@ section{padding:80px 40px;max-width:1100px;margin:0 auto;}
         </div>
       </div></div>
   </div>
+</section>
+<div class="divider"></div>
+<section id="production">
+  <div class="section-label">Concept to production</div>
+  <h2>Shipping the bet, not just the screens.</h2>
+  <p>The prototype was never just a demo. Walking the entire purchase proved the all-in number held end to end, which earned the idea the right to be built for real.</p>
+  <p>Shipping it meant getting design, engineering, and legal to hold a single line together, then letting the numbers decide. Here is how the bet went from a clickable flow to a live experiment.</p>
+  <div class="ptp" aria-label="From prototype to live experiment">
+    <div class="ptp-step">
+      <div class="ptp-n">01</div>
+      <div class="ptp-t">Prototype</div>
+      <div class="ptp-d">Walked the full purchase and proved the all-in number held end to end.</div>
+      <div class="ptp-tags"><span class="ptp-tag">Design</span></div>
+    </div>
+    <div class="ptp-arrow" aria-hidden="true">&rarr;</div>
+    <div class="ptp-step">
+      <div class="ptp-n">02</div>
+      <div class="ptp-t">Build for production</div>
+      <div class="ptp-d">Centralized pricing logic that adapts by state, with disclosures and microcopy cleared jurisdiction by jurisdiction.</div>
+      <div class="ptp-tags"><span class="ptp-tag">Engineering</span><span class="ptp-tag">Legal</span></div>
+    </div>
+    <div class="ptp-arrow" aria-hidden="true">&rarr;</div>
+    <div class="ptp-step">
+      <div class="ptp-n">03</div>
+      <div class="ptp-t">Launch as an A/B test</div>
+      <div class="ptp-d">Shipped on the highest-traffic path first for a fast, safe read on a tight timeline.</div>
+      <div class="ptp-tags"><span class="ptp-tag">Analytics</span></div>
+    </div>
+  </div>
+  <div class="hypo">
+    <p class="hypo-label">The hypothesis</p>
+    <p class="hypo-text">A higher but honest price shown up front beats a low price that jumps at checkout. If transparency builds trust, the bigger number seen early should cut fee shock and lift conversion, not scare people off.</p>
+  </div>
+
 </section>
 <div class="divider"></div>
 <section id="results">
